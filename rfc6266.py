@@ -406,6 +406,8 @@ def build_header(
     In the later case it should be a character string
     (unicode in Python 2).
 
+    :return: str()
+
     Options for generating filename_compat (only useful for legacy clients):
     - ignore (will only send filename*);
     - strip accents using unicode's decomposing normalisations,
@@ -450,5 +452,4 @@ def build_header(
         filename, safe=attr_chars_nonalnum, encoding='utf-8'), )
 
     # This will only encode filename_compat, if it used non-ascii iso-8859-1.
-    return rv.encode('iso-8859-1')
-
+    return rv
